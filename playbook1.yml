@@ -1,0 +1,22 @@
+---
+
+ - name: create user
+   hosts: all
+   tasks:
+    - name: user creation
+      user:
+       name: Mahisiri
+       password: mahi@siri143
+       uid: 1993
+       home: /home/ubuntu/Mahisiri
+       comment: "Devops Engineer"
+       shell: /bin/bash
+
+...       
+
+
+
+
+
+
+
