@@ -1,0 +1,18 @@
+---
+- name: check if a folder f12 is present if not create file f12
+  hosts: all
+  tasks:
+   - name: check if f12 is present
+     stat:
+      path: /home/ubuntu/f12
+     register: a
+   - name: display output of above modules
+     debug:
+      var: a
+   - name: create file f12 if f12 folder is not present
+     file:
+      name: f12
+      state: touch
+     when: a.stat.exists  --true
+
+...

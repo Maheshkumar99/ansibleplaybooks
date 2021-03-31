@@ -1,0 +1,7 @@
+---
+- name: edit index.html file
+  copy:
+   content: "new intelliqit"
+   dest: /var/www/html/index.html
+
+...

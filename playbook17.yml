@@ -1,0 +1,14 @@
+---
+- name: check s/w versions
+  hosts: all
+  tasks:
+   - name: check s/w versions
+     shell: "{{item}}"
+     with_items:
+      - "git --version"
+      - "mvn --version"
+      - "java -version"
+     register: a
+   - name: display output
+     debug:
+      var: a
