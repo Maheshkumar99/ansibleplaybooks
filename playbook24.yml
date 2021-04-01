@@ -1,0 +1,16 @@
+---
+- name: create user if not already present
+  hosts: all
+  tasks:
+   - block:
+      - name: check for user info
+        shell: cut -d ":" -f 1 /etc/passwd | grep "{{a}}"
+        register: result
+     rescue: 
+      - name: create user
+        user: 
+         name: usha
+         password: intelliqit
+...
+
+
